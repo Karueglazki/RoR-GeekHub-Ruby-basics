@@ -27,24 +27,32 @@ print "uniq ",mass.uniq,"\n"
 print "elem/10",mass.map{ |elem| elem/10 },"\n"
 
 
-=begin 
+
 #- получить новый массив, который бы содержал в себе те буквы английского алфавита, порядковый номер которых есть в нашем массиве
-new_mass='a'..'f'
+puts "task new erray with litteral"
+new_mass=('a'..'z').to_a
+mass_abc=Array.new()
+puts mass.size
 (0..mass.size-1).each do |i|
- mass[i]=new_mass[i]
+  (0..new_mass.size-1).each do |y|
+    if mass[i]==y
+      mass_abc << new_mass[y]
+    end
 end
-print new_mass,"\n"
+end
+print mass_abc,"\n"
 
 
 #- поменять местами минимальный и максимальный элементы массива
+mass1=mass
+puts "new array with change min and max"
+i = mass1.each_with_index.min[1]
+j = mass1.each_with_index.max[1]
+mass1[i],mass1[j]=mass1[j],mass1[i]
+print mass1, "\n"
 
 
 
-min = array.min
-p array.map { |el| el > 0 ? min : el }
-
-
-=end
 
 #- найти элементы, которые находятся перед минимальным числом в массиве
 i=0
@@ -56,7 +64,11 @@ end
 print "before min element ",el,"\n"
 
 #- необходимо найти три наименьших элемента 
-
-
-
-
+mass1=mass
+min_arr =Array.new
+3.times do 
+min_arr << mass1.min
+puts mass1.delete(mass1.min)
+end
+puts "min array"
+print min_arr, "\n"

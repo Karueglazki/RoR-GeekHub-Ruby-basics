@@ -5,7 +5,7 @@ begin
   else
     puts "Eh? Speak louder, my grandson!"
   end
-end while text !="Poka" 
+end while text !="POKA" 
 
 
 
